@@ -3,7 +3,7 @@
 ## Example for symfony app
 
 ```
-FROM elliotbrl/php8.1
+FROM {image}
 
 RUN echo "opcache.preload=/usr/src/app/config/preload.php" >> $PHP_INI_DIR/conf.d/preload.ini && \
 echo "opcache.preload_user=www-data" >> $PHP_INI_DIR/conf.d/preload.ini
