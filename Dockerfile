@@ -5,6 +5,9 @@ RUN xcaddy build \
 
 FROM php:8.1-fpm-alpine
 
+WORKDIR /usr/src/app
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY --from=composer/composer:2-bin --link /composer /usr/bin/composer
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
